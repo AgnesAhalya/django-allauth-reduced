@@ -1,0 +1,11 @@
+tests/
+django_allauth_reduced.egg-info
+.ruff_cache/
+.pytest_cache/
+test_script
+test-venv/
+pytest.ini
+allauth/templates/
+.DS_Store
+allauth/.DS_Store
+allauth/allroutes/__pycache__/

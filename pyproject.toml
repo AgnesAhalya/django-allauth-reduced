@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=75.3.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "django-allauth-reduced"
+version = "0.1.0"
+requires-python = ">=3.8"
+dependencies = [
+   "Django>=4.2.16",
+    "asgiref>=3.8.1",
+
+    "django-allauth==65.12.0",
+
+    "oauthlib>=3.3.0,<4",
+    "requests>=2.0.0,<3",
+    "pyjwt[crypto]>=2.0,<3",
+
+    "fido2>=1.1.2,<3",
+    "qrcode>=7.0.0,<9",
+    "python3-openid>=3.0.8,<4",
+
+    "pytest",
+    "pytest-django",
+    "responses",
+    "requests-mock",
+    "djangorestframework",
+    "django-ninja",
+]
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "tests.projects.regular.settings"
+python_files = ["test_*.py"]
