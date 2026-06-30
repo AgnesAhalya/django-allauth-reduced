@@ -23,8 +23,8 @@ def _json_error(target, exc):
         {
             "target": target,
             "passed": False,
-            "error": type(exc).__name__,
-            "message": str(exc),
+            "error": "Error occured during processing",
+            "message": "Error occured during processing",
         },
         status=500,
     )
