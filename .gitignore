@@ -9,3 +9,4 @@ allauth/templates/
 .DS_Store
 allauth/.DS_Store
 allauth/allroutes/__pycache__/
+analysis.md

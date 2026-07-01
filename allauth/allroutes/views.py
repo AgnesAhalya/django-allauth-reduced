@@ -218,3 +218,4 @@ def idp(request):
         )
     except Exception as exc:
         return _json_error("idp_request_validator_origin_allowed", exc)
+
