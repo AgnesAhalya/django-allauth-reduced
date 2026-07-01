@@ -3,6 +3,13 @@ from types import SimpleNamespace
 from django.http import JsonResponse
 
 
+
+from allauth.idp.oidc.internal.views import AuthorizationView
+from allauth.mfa.recovery_codes.views import DownloadRecoveryCodesView
+from allauth.socialaccount.providers.instagram.views import InstagramOAuth2Adapter
+from allauth.socialaccount.providers.oauth2.views import OAuth2CallbackView, OAuth2LoginView
+
+
 def _provider_app():
     return SimpleNamespace(settings={})
 
@@ -218,4 +225,18 @@ def idp(request):
         )
     except Exception as exc:
         return _json_error("idp_request_validator_origin_allowed", exc)
+
+
+
+def download_recovery_codes():
+    return DownloadRecoveryCodesView.as_view()
+
+def oauth2_login():
+    return OAuth2LoginView.adapter_view(InstagramOAuth2Adapter)
+
+def oauth2_callback():
+    return OAuth2CallbackView.adapter_view(InstagramOAuth2Adapter)
+
+def authorization():
+    return AuthorizationView.as_view()
 
